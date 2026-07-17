@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'TikTok Sans';
+    src: url('../fonts/TikTokSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TikTok Sans';
+    src: url('../fonts/TikTokSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'TikTok Sans', 'Roboto', sans-serif;
+    background: #FFFFFF;
+}
+
+.fractal-glass {
+    width: 1920px;
+    height: 1077px;
+    margin: 0 auto;
+    background: url('../images/fractal-glass.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1530px;
+    height: 98px;
+    margin-left: 195px;
+    margin-top: 48px;
+    padding: 0;
+    margin-bottom: 66px;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo-icon {
+    width: 54.65px;
+    height: 27.38px;
+}
+
+.header__logo-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+    text-transform: uppercase;
+    width: 165.99px;
+    height: 27.94px;
+    line-height: 1;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__nav-link {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #111F35;
+    text-decoration: none;
+    height: 40px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.header__nav-link:hover {
+    background: #111F35;
+    color: #FFFFFF;
+}
+
+.header__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__contact-btn {
+    width: 230px;
+    height: 45px;
+    background: rgba(17, 31, 53, 0.2);
+    border-radius: 22.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+.header__contact-btn:hover {
+    background: rgba(17, 31, 53, 0.4);
+}
+
+.hero {
+    width: 1120px;
+    height: 428px;
+    margin-left: 400px;
+}
+
+.hero__title {
+    width: 971px;
+    height: 100px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 50px;
+    text-align: center;
+    color: #111F35;
+    margin: 0 auto 26px;
+}
+
+.hero__subtitle {
+    width: 836px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin: 0 auto 36px;
+}
+
+.hero__features {
+    width: 1120px;
+    height: 115px;
+    border-radius: 85.5px;
+    background: #111F3533;
+    display: flex;
+    margin: 0 auto 37px;
+}
+
+.hero__feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    margin: 51px 28px;
+}
+
+.hero__feature-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.hero__feature-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+    color: #111F35;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.hero__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 50px;
+    margin: 26px auto 0;
+    background: #111F35;
+    border-radius: 28px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.hero__button:hover {
+    background: #2a3a55;
+    transition: background 0.2s ease;
+}
