@@ -1,16 +1,24 @@
 @font-face {
     font-family: 'TikTok Sans';
-    src: url('../fonts/TikTokSans-Regular.woff2') format('woff2');
+    src: url('../fonts/TikTokSans-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TikTok Sans';
-    src: url('../fonts/TikTokSans-Bold.woff2') format('woff2');
+    src: url('../fonts/TikTokSans-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'TikTok Sans';
+    src: url('../fonts/TikTokSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,9 +31,9 @@ body {
 }
 
 .fractal-glass {
-    width: 1920px;
+    max-width: 1920px;
     height: 1077px;
-    margin: 0 auto;
+    margin: 0 auto 903px;
     background: url('../images/fractal-glass.png') no-repeat center;
     background-size: cover;
     display: flex;
@@ -37,7 +45,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1530px;
+    max-width: 1530px;
     height: 98px;
     margin-left: 195px;
     margin-top: 48px;
@@ -121,14 +129,14 @@ body {
 }
 
 .hero {
-    width: 1120px;
+    max-width: 1120px;
     height: 428px;
     margin-left: 400px;
+    margin-bottom: 69px;
 }
 
 .hero__title {
     width: 971px;
-    height: 100px;
     font-family: 'TikTok Sans', sans-serif;
     font-weight: 700;
     font-size: 68px;
@@ -189,7 +197,7 @@ body {
     justify-content: center;
     width: 230px;
     height: 50px;
-    margin: 26px auto 0;
+    margin: 0 auto;
     background: #111F35;
     border-radius: 28px;
     font-family: 'TikTok Sans', sans-serif;
@@ -201,4 +209,1082 @@ body {
 .hero__button:hover {
     background: #2a3a55;
     transition: background 0.2s ease;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__content {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+.popup__title {
+    width: 579px;
+    margin: 33px auto 29px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    color: #111F35;
+    transform: scaleX(1.05);
+}
+
+.popup__input {
+    box-sizing: border-box;
+    width: 278px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 0.2px solid #111F35;
+    border-radius: 15px;
+    padding: 0 16px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #111F35;
+    outline: none;
+}
+
+.popup__input--small {
+    width: 278px;
+}
+
+.popup__input--large {
+    width: 340px;
+}
+
+.popup__row {
+    display: flex;
+    gap: 17px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.popup__textarea {
+    box-sizing: border-box;
+    width: 635px;
+    height: 90px;
+    background: #FFFFFF;
+    border: 0.2px solid #111F35;
+    border-radius: 15px;
+    padding: 12px 16px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #111F35;
+    outline: none;
+    resize: none;
+    margin: 0 auto 19px;
+    display: block;
+}
+
+.popup__agreement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 499px;
+    margin: 0 auto 18px;
+}
+
+.popup__checkbox {
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    border: 0.2px solid #111F35;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.popup__checkbox:checked::after {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 9px;
+    top: -2px;
+    left: -0.5px;
+    background: url('../images/check.svg') no-repeat center;
+    background-size: 11px 9px;
+}
+
+.popup__agreement-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #111F35;
+    font-stretch: 150%;
+}
+
+.popup__submit {
+    display: block;
+    width: 265px;
+    height: 50px;
+    margin: 12px auto 0;
+    background: #111F35;
+    border-radius: 30px;
+    border: none;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.popup__submit:hover {
+    background: #2a3a55;
+    transition: background 0.2s ease;
+}
+
+.popup__close {
+    position: absolute;
+    width: 19px;
+    height: 15px;
+    right: 27px;
+    top: 25px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #111F35;
+    cursor: pointer;
+}
+
+.services {
+    max-width: 1530px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #FFFFFF 17.79%, #E5FFFE 100%);
+    border-radius: 70px;
+    padding: 60px;
+}
+
+.services__title {
+    width: 288px;
+    margin: 0 auto;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 100%;
+    text-align: center;
+    color: #111F35;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 432px);
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.services__row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.services__card {
+    width: 432px;
+    height: 348px;
+    position: relative;
+}
+
+.services__card--tall {
+    height: 413px;
+}
+
+.services__card-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.services__card-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 432px;
+    height: 319px;
+    background: #E7EDF3;
+    border-radius: 35px;
+    padding: 54px 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__card--tall .services__card-inner {
+    height: 383px;
+}
+
+.services__card-title {
+    width: 142px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    color: #111F35;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin: 0 0 15px;
+}
+
+.services__card-text {
+    width: 343px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #111F35;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin: 0 0 20px;
+}
+
+.services__card-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    background: #111F35;
+    border-radius: 28px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: 31px;
+}
+
+.services__card-link:hover {
+    background: #2a3a55;
+    transition: background 0.2s ease;
+}
+
+.services__center {
+    width: 230px;
+    height: 116px;
+    display: flex;
+    margin: 183px 100px 68px;
+}
+
+.services__center-img {
+    width: 230px;
+    height: 116px;
+}
+
+.services__bottom {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.services__bottom-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: #111F35;
+    margin-bottom: 30px;
+}
+
+.services__bottom-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    background: #111F35;
+    border-radius: 28px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.services__bottom-link:hover {
+    background: #2a3a55;
+    transition: background 0.2s ease;
+}
+
+.services__text {
+    margin: -55px auto 30px;
+    text-align: center;
+}
+
+.services__text_1 {
+    width: 420px;
+    margin: 0 auto;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    color: #111F35;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.about {
+    position: relative;
+    max-width: 1532px;
+    min-height: 855px;
+    margin: 0 auto 150px;
+}
+
+.about__title {
+    width: 404px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+    text-align: center;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.about__text {
+    position: absolute;
+    right: 0;
+    top: 23px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    white-space: pre-line;
+    text-align: justify;  
+
+}
+
+.about__illustration {
+    position: absolute;
+    width: 681px;
+    height: 711px;
+    left: 0px;
+    top: 112px;
+}
+
+.about__illustration-img {
+    width: 681px;
+    height: 711px;
+}
+
+.about__slider {
+    position: absolute;
+    width: 750px;
+    height: 200px;
+    right: 0;
+    top: 573px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    overflow: hidden;
+}
+
+.about__slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.about__slider-slide {
+    min-width: 750px;
+    position: relative;
+}
+
+.about__slider-decor {
+    position: absolute;
+    width: 154px;
+    height: 155px;
+    left: 0;
+    top: 22px;
+}
+
+.about__slider-decor-img {
+    width: 154px;
+    height: 155px;
+}
+
+.about__slider-text {
+    position: absolute;
+    width: 555px;
+    left: 195px;
+    top: 71px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.about__slider-text--red {
+    color: #E01458;
+}
+
+.about__slider-nav {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    display: flex;
+    gap: 14px;
+}
+
+.about__slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.about__slider-btn--prev {
+    background: #4D5866;
+}
+
+.about__slider-btn--next {
+    background: #111F35;
+}
+
+.about__slider-btn img {
+    width: 20px;
+    height: auto;
+}
+
+.advantages {
+    max-width: 1920px;
+    height: 1024px;
+    margin: 0 auto 131px;
+    position: relative;
+}
+
+.advantages__container {
+    max-width: 1920px;
+    height: 927px;
+    position: absolute;
+    left: 0;
+    top: 63px;
+    background: #111F35;
+    padding: 93px 195px 0;
+}
+
+.advantages__title {
+    width: 431px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 110%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin-bottom: 87px;
+}
+
+.advantages__content {
+    display: flex;
+    gap: 60px;
+}
+
+.advantages__col {
+    display: flex;
+    flex-direction: column;
+    gap: 49px;
+}
+
+.advantages__col--shifted {
+    margin-top: -200px;
+}
+
+.advantages__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 730px;
+    margin-bottom: 49px;
+}
+
+.advantages__card-icon {
+    width: 38px;
+    height: 37px;
+    flex-shrink: 0;
+    transform: translateY(-10px);
+}
+
+.advantages__card-icon img {
+    width: 38px;
+    height: 37px;
+}
+
+.advantages__card-title {
+    display: block;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin-bottom: 6px;
+}
+
+.advantages__card-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.advantages__decor-left {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    left: 585px;
+    top: -105px;
+}
+
+.advantages__decor-right {
+    position: absolute;
+    width: 233px;
+    height: 118px;
+    right: 192px;
+    bottom: -8px;
+}
+
+.advantages__mask {
+    position: absolute;
+    width: 448px;
+    height: 222px;
+    right: 480px;
+    bottom: 15px;
+}
+
+.process {
+    max-width: 1533px;
+    margin: 0 auto 140px;
+}
+
+.process__title {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 110%;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin-bottom: 50px;
+}
+
+.process__card {
+    width: 360px;
+    height: 389px;
+    position: relative;
+}
+
+.process__card-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 360px;
+    height: 367px;
+    background: #CED5DD;
+    border-radius: 45px;
+}
+
+.process__grid {
+    display: flex;
+    gap: 31px;
+}
+
+.process__card-icon {
+    position: absolute;
+    width: 135px;
+    height: 96px;
+    left: 6px;
+    top: -22px;
+    z-index: 1;
+}
+
+.process__card-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.process__card-icon--last {
+    left: 191px;
+    top: -33px;
+}
+
+.process__card:nth-child(1) .process__card-inner {
+    background: #CED5DD;
+}
+
+.process__card:nth-child(2) .process__card-inner {
+    background: #7B8591;
+}
+
+.process__card:nth-child(3) .process__card-inner {
+    background: #6ADFDC;
+}
+
+.process__card:nth-child(4) .process__card-inner {
+    background: #4D5866;
+}
+
+.process__card-title {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin: 157px 0 11px 30px;
+}
+
+.process__card:nth-child(2) .process__card-title,
+.process__card:nth-child(4) .process__card-title {
+    color: #FFFFFF;
+}
+
+.process__card-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000000;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin: 10px 25px 0 30px;
+}
+
+.process__card:nth-child(2) .process__card-text,
+.process__card:nth-child(4) .process__card-text {
+    color: #FFFFFF;
+}
+
+.process__arrow {
+    position: absolute;
+    left: 260px;
+    top: 45px;
+    z-index: 1;
+}
+
+.form-section {
+    max-width: 1530px;
+    margin: 0 auto 145px;
+}
+
+.form-section__container {
+    max-width: 1530px;
+    height: 470px;
+    background: #E01458;
+    border-radius: 45px;
+    display: flex;
+    padding: 60px 50px;
+    position: relative;
+}
+
+.form-section__title {
+    width: 438px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 110%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    margin-bottom: 13px;
+}
+
+.form-section__subtitle {
+    width: 361px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.form-section__decor-1 {
+    position: absolute;
+    height: 25px;
+    left: 442px;
+    top: 104px;
+}
+
+.form-section__decor-2 {
+    position: absolute;
+    left: 602px;
+    top: 104px;
+}
+
+.form-section__decor-3 {
+    position: absolute;
+    left: 420px;
+    top: 26px;
+}
+
+.form-section__right {
+    margin-left: auto;
+    width: 620px;
+}
+
+.form-section__form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.form-section__input {
+    width: 620px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+    padding: 0 20px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #111F35;
+    outline: none;
+}
+
+.form-section__input::placeholder {
+    color: #CED5DD;
+}
+
+.form-section__select {
+    position: relative;
+}
+
+.form-section__dropdown {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 620px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 10px 0;
+    display: none;
+    z-index: 10;
+}
+
+.form-section__select.active .form-section__dropdown {
+    display: block;
+}
+
+.form-section__dropdown-item {
+    padding: 8px 20px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-size: 15px;
+    color: #111F35;
+    cursor: pointer;
+}
+
+.form-section__dropdown-item:hover {
+    background: #E7EDF3;
+}
+
+.form-section__dropdown-item:first-child {
+    background: #E7EDF3;
+    border-radius: 20px 20px 0 0;
+}
+
+.form-section__agreement {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-section__checkbox {
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.form-section__checkbox:checked::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 13px;
+    top: -2px;
+    left: -0.5px;
+    background: url('../images/check.svg') no-repeat center;
+    background-size: 16px 13px;
+}
+
+.form-section__agreement-text {
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #FFFFFF;
+    font-stretch: 150%;
+}
+
+.form-section__submit {
+    width: 230px;
+    height: 40px;
+    background: #111F35;
+    border-radius: 20px;
+    border: none;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.form-section__submit:hover {
+    background: #2a3a55;
+    transition: background 0.2s ease;
+}
+
+.form-section__select-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 17px;
+    height: 6px;
+}
+
+.footer {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.footer__container {
+    max-width: 1920px;
+    height: 603px;
+    background: #111F35;
+    padding-top: 96px ; 
+    position: relative;
+}
+
+.footer__title {
+    width: 360px;
+    margin: 0 0 81px 715px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+}
+
+.footer__buttons {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 74px 715px;}
+
+.footer__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 0 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 22.5px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer__btn--wide {
+    width: 360px;
+}
+
+.footer__btn--red {
+    background: #E01458;
+    width: 360px;
+}
+
+.footer__btn:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer__nav {
+    display: flex;
+    width: 1007px;
+    margin: 0 0 50px 670px;
+}
+
+.footer__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 225px;
+    height: 40px;
+    border-radius: 30px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer__nav a:hover {
+    background: #4D5866;
+}
+
+.footer__line {
+    width: 1528px;
+    height: 0;
+    border-top: 1px solid #FFFFFF;
+    margin: 0 auto 30px;
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding-left: 2px;
+}
+
+.footer__logo {
+    position: absolute;
+    width: 146px;
+    height: 75px;
+    left: 195px;
+    top: 322px;
+}
+
+.footer__copyright {
+    margin-left: 195px;
+    font-family: 'TikTok Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+    font-stretch: 150%;
+    font-variation-settings: 'slnt' 0, 'opsz' 12;
+    width: 304px;
+}
+
+@media (max-width: 1024px) {
+    .fractal-glass {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        margin-bottom: 50px;
+    }
+
+    .header {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 30px;
+    }
+
+    .header__nav {
+        gap: 15px;
+    }
+
+    .header__nav-link {
+        font-size: 12px;
+        padding: 0 10px;
+        height: 30px;
+    }
+
+    .header__logo-text {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .header__contact-btn {
+        width: 142px;
+        height: 23px;
+        font-size: 12px;
+    }
+
+    .hero {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 30px;
+        height: auto;
+    }
+
+    .hero__title {
+        width: 100%;
+        font-size: 48px;
+        line-height: 58px;
+        height: auto;
+    }
+
+    .hero__subtitle {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .hero__features {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .hero__feature {
+        margin: 0;
+        gap: 10px;
+    }
+
+    .hero__feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero__feature-text {
+        font-size: 14px;
+        width: auto !important;
+    }
+
+    .hero__button {
+        margin: 30px auto;
+    }
 }
