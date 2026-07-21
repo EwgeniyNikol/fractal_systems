@@ -47,10 +47,11 @@ body {
     justify-content: space-between;
     max-width: 1530px;
     height: 98px;
-    margin-left: 195px;
+    /* margin-left: 195px;
     margin-top: 48px;
     padding: 0;
-    margin-bottom: 66px;
+    margin-bottom: 66px; */
+    margin: 48px auto 66px
 }
 
 .header__logo {
@@ -130,9 +131,10 @@ body {
 
 .hero {
     max-width: 1120px;
-    height: 428px;
-    margin-left: 400px;
-    margin-bottom: 69px;
+    /* height: 428px; */
+    /* margin-left: 400px;
+    margin-bottom: 69px; */
+    margin: 0 auto 69px;
 }
 
 .hero__title {
@@ -911,7 +913,7 @@ body {
     background: #E01458;
     border-radius: 45px;
     display: flex;
-    padding: 60px 50px;
+    padding: 64px 130px 46px 52px;
     position: relative;
 }
 
@@ -924,11 +926,13 @@ body {
     color: #FFFFFF;
     font-stretch: 150%;
     font-variation-settings: 'slnt' 0, 'opsz' 12;
-    margin-bottom: 13px;
+    padding-top: 45px;
+    /* margin-bottom: 13px; */
 }
 
 .form-section__subtitle {
     width: 361px;
+    /* padding-top: 45px; */
     font-family: 'TikTok Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
